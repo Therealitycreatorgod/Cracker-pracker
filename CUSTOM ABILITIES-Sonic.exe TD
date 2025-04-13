@@ -1,0 +1,9 @@
+--Info
+loadstring(game:HttpGet('https://raw.githubusercontent.com/NaturalNi13/Custom-Abilities/refs/heads/main/notify.lua'))()
+
+--Abilities
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Therealitycreatorgod/Cracker-pracker/refs/heads/main/Silver%20levitate-TD'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Therealitycreatorgod/Cracker-pracker/refs/heads/main/Giaction%3F%3F%20-SONIC%20exe%20TD'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Therealitycreatorgod/Cracker-pracker/refs/heads/main/Cream%20glide%20-sonic%20exe%20TD'))()
+
+--Fuck you john cena you ain't stealing my abilities anymore
