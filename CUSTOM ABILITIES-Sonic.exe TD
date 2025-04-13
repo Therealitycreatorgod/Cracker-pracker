@@ -1,5 +1,5 @@
 --Info
-loadstring(game:HttpGet('https://raw.githubusercontent.com/NaturalNi13/Custom-Abilities/refs/heads/main/notify.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Therealitycreatorgod/Cracker-pracker/refs/heads/main/Notification%20for%20custom%20abilities'))()
 
 --Abilities
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Therealitycreatorgod/Cracker-pracker/refs/heads/main/Silver%20levitate-TD'))()
