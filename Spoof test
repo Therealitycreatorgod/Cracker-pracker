@@ -1,0 +1,45 @@
+-- Proper Metamethod Spoof (Delta/Executor safe)
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+
+local oldIndex = mt.__index
+
+mt.__index = newcclosure(function(self, key)
+    if self == game.Players.LocalPlayer then
+        if key == "GetRankInGroup" then
+            return function(_, groupId)
+                if groupId == 33943259 then
+                    return 255 -- Spoofed rank
+                end
+                return 0 -- Default fallback
+            end
+        end
+    end
+    return oldIndex(self, key)
+end)
+
+-- Proper Module Spoof (Icon module bypass)
+local realRequire = require
+
+getgenv().require = newcclosure(function(module)
+    if typeof(module) == "Instance" and tostring(module):find("Icon") then
+        -- Create a spoofed version of Icon module
+        local fakeIcon = {}
+        fakeIcon.__index = fakeIcon
+        
+        function fakeIcon.new()
+            local self = setmetatable({}, fakeIcon)
+            function self:autoDeselect() return self end
+            function self:setLabel() return self end
+            function self:align() return self end
+            function self:bindEvent() return self end
+            return self
+        end
+        
+        return fakeIcon
+    end
+    
+    return realRequire(module)
+end)
+
+print("[+] Spoofing done successfully.")
