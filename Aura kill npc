@@ -1,12 +1,11 @@
 getgenv().G = false
-getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+getgenv().Creator = ''
 
 local player = game.Players.LocalPlayer
-local starterGui = player:WaitForChild("PlayerGui")
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "KillAuraToggleGUI"
-ScreenGui.Parent = starterGui
+ScreenGui.Name = "" 
+ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ResetOnSpawn = false
 
 local Frame = Instance.new("Frame")
@@ -27,7 +26,7 @@ local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.BackgroundTransparency = 1
-Title.Text = "skibidi kill all npc"
+Title.Text = "Kill Aura for STUPID npc"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 20
