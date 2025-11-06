@@ -1,10 +1,10 @@
-getgenv().G = false
-getgenv().Creator = ''
+getgenv().G = true
+getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
 
 local player = game.Players.LocalPlayer
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "" 
+ScreenGui.Name = ""
 ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ResetOnSpawn = false
 
@@ -26,7 +26,7 @@ local Title = Instance.new("TextLabel")
 Title.Parent = Frame
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.BackgroundTransparency = 1
-Title.Text = "Kill Aura for STUPID npc"
+Title.Text = "Kill Aura for stupid npc"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 20
@@ -35,9 +35,9 @@ local ToggleButton = Instance.new("TextButton")
 ToggleButton.Parent = Frame
 ToggleButton.Size = UDim2.new(0.8, 0, 0.35, 0)
 ToggleButton.Position = UDim2.new(0.1, 0, 0.5, 0)
-ToggleButton.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.Text = "OFF"
+ToggleButton.Text = "ON"
 ToggleButton.Font = Enum.Font.SourceSansBold
 ToggleButton.TextSize = 22
 ToggleButton.BorderSizePixel = 0
@@ -57,16 +57,15 @@ ToggleButton.MouseButton1Click:Connect(function()
 	end
 end)
 
-task.spawn(function()
-	while task.wait(0.9) do
-		if getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' then
-			sethiddenproperty(player, "SimulationRadius", 112412400000)
-			sethiddenproperty(player, "MaxSimulationRadius", 112412400000)
-			for _, d in pairs(workspace:GetDescendants()) do
-				if d:IsA("Humanoid") and d.Parent.Name ~= player.Name then
-					d.Health = 0
-				end
+while getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
+	wait(0.9)
+	if getgenv().G then
+		sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+		sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+		for i,d in pairs(game.Workspace:GetDescendants()) do
+			if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+				d.Health = 0
 			end
 		end
 	end
-end)
+end
